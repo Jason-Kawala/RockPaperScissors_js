@@ -1,3 +1,22 @@
-h1 {
-    
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+
+
+
+/* @font-face {
+    font-family: 'medusa_gothicregular';
+    src: url('/fonts/webfontkit-20220126-110810/medusagothic_d-webfont.woff2') format('woff2'),
+         url('/fonts/webfontkit-20220126-110810/medusagothic_d-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+} */
+  
+.title {
+    font-family: 'Mochiy Pop P One', sans-serif;
+    color: whitesmoke;
+    margin-top: 30px;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.856);
 }

@@ -1,6 +1,3 @@
-inputNumber = Number(prompt("How much game do you want to play ? :"));
-playGame(inputNumber);
-
 // Computer make a 'choice'
 function computerPlay() {
     var elements = ['rock','paper','scissors'];
