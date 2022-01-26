@@ -2,7 +2,7 @@ inputNumber = Number(prompt("How much game do you want to play ? :"));
 playGame(inputNumber);
 
 // Computer make a 'choice'
-function computerPlay() { 
+function computerPlay() {
     var elements = ['rock','paper','scissors'];
     let choice = Math.floor(Math.random()*elements.length);
     return elements[choice];
@@ -31,6 +31,7 @@ function playerSelection() {
     }
 }
 
+// Play game where x is the number of rounds given
 function playGame(x) {
     let playerScore = 0;
     let computerScore = 0;
@@ -62,6 +63,7 @@ function playGame(x) {
     }
 }
 
+// one round of the game and return 0 1 or 2 based on user result -- 0-tie 1-lost 2-won
 function playRound() {
     const player = playerSelection();
     const computer = computerPlay();
