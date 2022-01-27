@@ -1,3 +1,20 @@
+const icons = document.querySelectorAll('.icon');
+const playerScore = document.querySelector('.player');
+const computerScore = document.querySelector('.computer');
+
+icons.forEach(icon => {
+    icon.addEventListener('click', () => {
+        let choice = icon.classList[1];
+        console.log(choice);
+    })
+})
+
+
+
+
+
+
+
 // Computer make a 'choice'
 function computerPlay() {
     var elements = ['rock','paper','scissors'];
@@ -6,24 +23,15 @@ function computerPlay() {
 }
 
 // Player choose between Rock Paper and Scissors
-function playerSelection() {
-    var choice = prompt('Choose between Rock(r) Paper(p) and Scissors(s)').charAt(0).toLowerCase();
+function playerSelection(choice) {
     var elements = ['rock','paper','scissors'];
 
-    while (choice != 'r' && choice != 'p' && choice != 's') {
-        if (choice != 'r' && choice != 'p' && choice != 's') {
-            var choice = prompt('Please choose between Rock(r) Paper(p) and Scissors(s)').charAt(0).toLowerCase();
-        } else {
-            break;
-        }
-    }
-
     switch(choice) {
-        case 'r':
+        case 'rock':
             return elements[0];
-        case 'p':
+        case 'paper':
             return elements[1];
-        case 's':
+        case 'scissors':
             return elements[2];
     }
 }

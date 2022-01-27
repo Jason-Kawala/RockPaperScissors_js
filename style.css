@@ -48,3 +48,15 @@ body {
     flex: 1;
     margin-top: 25%;
 }
+
+img {
+    width: 150px;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
