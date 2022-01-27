@@ -1,18 +1,20 @@
 const icons = document.querySelectorAll('.icon');
-const playerScore = document.querySelector('.player');
-const computerScore = document.querySelector('.computer');
+const player = document.querySelector('.player span');
+const computer = document.querySelector('.computer span');
+let playerScore = 0;
+let computerScore = 0;
 
 icons.forEach(icon => {
     icon.addEventListener('click', () => {
-        let choice = icon.classList[1];
-        console.log(choice);
+        let playerChoice = icon.classList[1];
+        let computerChoice = computerPlay();
+        playRound(playerChoice, computerChoice);
+        console.log(`Score player : ${playerScore}`); // temporary, just to show in console to make sure
+        console.log(`Score comp : ${computerScore}`); // temporary, just to show in console to make sure
+        player.innerHTML = playerScore;
+        computer.innerHTML = computerScore;
     })
 })
-
-
-
-
-
 
 
 // Computer make a 'choice'
@@ -69,9 +71,7 @@ function playGame(x) {
 }
 
 // one round of the game and return 0 1 or 2 based on user result -- 0-tie 1-lost 2-won
-function playRound() {
-    const player = playerSelection();
-    const computer = computerPlay();
+function playRound(player, computer) {
 
     console.log(`You choose ${player} and computer choose ${computer}\n`);
 
@@ -81,10 +81,10 @@ function playRound() {
             return 0;
         } else if (computer == 'paper') {
             console.log(`You lost ! ${computer} beats ${player}`);
-            return 1;
+            return computerScore += 1;
         } else {
             console.log(`You won ! ${player} beats ${computer}`);
-            return 2;
+            return playerScore += 1;
         }
     }
 
@@ -94,10 +94,10 @@ function playRound() {
             return 0;
         } else if (computer == 'scissors') {
             console.log(`You lost ! ${computer} beats ${player}`);
-            return 1;
+            return computerScore += 1;
         } else {
             console.log(`You won ! ${player} beats ${computer}`);
-            return 2;
+            return playerScore += 1;
         }
     }
 
@@ -107,10 +107,10 @@ function playRound() {
             return 0;
         } else if (computer == 'rock') {
             console.log(`You lost ! ${computer} beats ${player}`);
-            return 1;
+            return computerScore += 1;
         } else {
             console.log(`You won ! ${player} beats ${computer}`);
-            return 2;
+            return playerScore += 1;
         }
     }
 
