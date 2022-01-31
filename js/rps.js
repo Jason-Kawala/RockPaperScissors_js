@@ -8,11 +8,18 @@ icons.forEach(icon => {
     icon.addEventListener('click', () => {
         let playerChoice = icon.classList[1];
         let computerChoice = computerPlay();
-        playRound(playerChoice, computerChoice);
+        let round = playRound(playerChoice, computerChoice);
         console.log(`Score player : ${playerScore}`); // temporary, just to show in console to make sure
         console.log(`Score comp : ${computerScore}`); // temporary, just to show in console to make sure
         player.innerHTML = playerScore;
         computer.innerHTML = computerScore;
+        if (round == 0) {
+            console.log('Tie');
+        } else if (round == 2) {
+            console.log('You won!')
+        } else {
+            console.log('Computer won')
+        }
     })
 })
 
@@ -37,10 +44,12 @@ function playRound(player, computer) {
             return 0;
         } else if (computer == 'paper') {
             console.log(`You lost ! ${computer} beats ${player}`);
-            return computerScore += 1;
+            computerScore += 1;
+            return 1;
         } else {
             console.log(`You won ! ${player} beats ${computer}`);
-            return playerScore += 1;
+            playerScore += 1;
+            return 2
         }
     }
 
@@ -50,10 +59,12 @@ function playRound(player, computer) {
             return 0;
         } else if (computer == 'scissors') {
             console.log(`You lost ! ${computer} beats ${player}`);
-            return computerScore += 1;
+            computerScore += 1;
+            return 1;
         } else {
             console.log(`You won ! ${player} beats ${computer}`);
-            return playerScore += 1;
+            playerScore += 1;
+            return 2;
         }
     }
 
@@ -63,10 +74,12 @@ function playRound(player, computer) {
             return 0;
         } else if (computer == 'rock') {
             console.log(`You lost ! ${computer} beats ${player}`);
-            return computerScore += 1;
+            computerScore += 1;
+            return 1;
         } else {
             console.log(`You won ! ${player} beats ${computer}`);
-            return playerScore += 1;
+            playerScore += 1;
+            return 2;
         }
     }
 
