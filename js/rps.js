@@ -1,6 +1,7 @@
 const icons = document.querySelectorAll('.icon');
 const player = document.querySelector('.player span');
 const computer = document.querySelector('.computer span');
+const result = document.querySelector('.result');
 let playerScore = 0;
 let computerScore = 0;
 
@@ -14,11 +15,11 @@ icons.forEach(icon => {
         player.innerHTML = playerScore;
         computer.innerHTML = computerScore;
         if (round == 0) {
-            console.log('Tie');
+            result.innerHTML = 'Tie';
         } else if (round == 2) {
-            console.log('You won!')
+            result.innerHTML = 'You won!'
         } else {
-            console.log('Computer won')
+            result.innerHTML = 'Computer won..'
         }
     })
 })
